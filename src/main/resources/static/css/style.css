@@ -1,0 +1,113 @@
+:root {
+    --primary-color: #007aff;
+    --primary-hover: #005bbf;
+    --bg-color: #f5f6fa;
+    --text-color: #222;
+    --border-color: #e0e0e0;
+    --input-bg: #fafbfc;
+    --white: #fff;
+    --shadow: rgba(0,0,0,0.04);
+}
+
+body {
+    background: var(--bg-color);
+    font-family: 'Noto Sans JP', 'Segoe UI', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: var(--text-color);
+}
+
+.container {
+    max-width: 600px;
+    margin: 48px auto;
+    background: var(--white);
+    border-radius: 12px;
+    box-shadow: 0 2px 8px var(--shadow);
+    padding: 32px 24px 24px;
+}
+
+h1 {
+    font-size: 1.5em;
+    font-weight: 700;
+    margin-bottom: 28px;
+    letter-spacing: 1px;
+}
+
+form {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 20px;
+    align-items: center;
+    justify-content: center;
+}
+
+label {
+    font-weight: 500;
+    font-size: 1em;
+}
+
+input[type="text"] {
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    padding: 8px 14px;
+    font-size: 1em;
+    outline: none;
+    transition: border 0.2s;
+    background: var(--input-bg);
+}
+
+input[type="text"]:focus {
+    border: 1.5px solid var(--primary-color);
+    background: var(--white);
+}
+
+button, .stop-btn {
+    border: none;
+    border-radius: 6px;
+    padding: 8px 16px;
+    background: var(--primary-color);
+    color: var(--white);
+    font-size: 1em;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.2s;
+    margin-top: 0;
+}
+
+button:hover, .stop-btn:hover {
+    background: var(--primary-hover);
+}
+
+#interval-bar-wrapper {
+    margin: 18px 0 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+}
+
+progress {
+    width: 160px;
+    height: 12px;
+    border-radius: 6px;
+    background: var(--border-color);
+    appearance: none;
+}
+
+progress::-webkit-progress-bar {
+    background: var(--border-color);
+    border-radius: 6px;
+}
+
+progress::-webkit-progress-value {
+    background: var(--primary-color);
+    border-radius: 6px;
+}
+
+#chart-area {
+    margin: 0 auto 20px;
+    padding: 10px 0 0;
+    background: none;
+    box-shadow: none;
+    border-radius: 0;
+}

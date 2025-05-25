@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>株価リアルタイム1分足チャート</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+<div class="container">
+    <header>
+        <h1>米株1分足チャート（直近2時間）</h1>
+    </header>
+
+    <main>
+        <form id="symbolForm">
+            <label for="symbol">シンボル:</label>
+            <input type="text"
+                   id="symbol"
+                   name="symbol"
+                   maxlength="5"
+                   required
+                   placeholder="例: IBM"
+                   autocomplete="off">
+            <button type="submit">表示</button>
+        </form>
+
+        <div id="interval-bar-wrapper">
+            <label for="intervalBar">更新間隔</label>
+            <progress id="intervalBar" max="100" value="0"></progress>
+            <span id="intervalText">0s</span>
+        </div>
+
+        <div id="chart-area">
+            <canvas id="stockChart"></canvas>
+        </div>
+
+        <button id="stopBtn" class="stop-btn">SSE接続を終了</button>
+    </main>
+</div>
+<script th:src="@{/js/app.js}"></script>
+</body>
+</html>
