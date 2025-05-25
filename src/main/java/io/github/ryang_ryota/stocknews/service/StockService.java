@@ -2,6 +2,7 @@ package io.github.ryang_ryota.stocknews.service;
 
 import io.github.ryang_ryota.stocknews.model.Stock;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.reactive.function.client.WebClient;
 import reactor.core.publisher.Flux;
@@ -20,6 +21,8 @@ import java.util.stream.Collectors;
 public class StockService {
 
     private final WebClient webClient;
+
+    @Value("${alpha-vantage.api-key}")
     private final String apiKey;
 
     /**
