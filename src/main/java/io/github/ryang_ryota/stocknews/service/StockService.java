@@ -17,13 +17,18 @@ import java.util.stream.Collectors;
  * 株価情報を取得・加工するサービスクラス
  */
 @Service
-@RequiredArgsConstructor
 public class StockService {
 
     private final WebClient webClient;
 
     @Value("${alpha-vantage.api-key}")
     private final String apiKey;
+
+    public StockService(WebClient alphaVantageWebClient,
+                        @Value("${alpha-vantage.api-key}") String apiKey) {
+        this.webClient = alphaVantageWebClient;
+        this.apiKey = apiKey;
+    }
 
     /**
      * 指定された銘柄の2時間分の1分足データを取得する
