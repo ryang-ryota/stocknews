@@ -4,6 +4,7 @@
 
 ## 概要
 
+**学習目的で開発しています。**  
 Alpha Vantage APIを利用し、指定した株式シンボルの直近2時間分の1分足データをリアルタイム（2分ごと更新）でグラフ表示するWebアプリです。  
 Spring Boot（WebFlux, SSE）＋ JavaScript（Chart.js）で構成されています。
 
